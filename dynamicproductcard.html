@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Product Card</title>
+    <style>
+        body{
+            background-color: lightskyblue;
+        }
+        #furniture-list{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            background-color: lightpink;
+        }
+        .furniture-card-details{
+ 
+border: 5px solid rgb(8, 7, 104);
+width: 310px;
+height: auto;
+text-align: center;
+background-color: lightgreen;
+ 
+        }
+        h1{text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>Dynamic Furniture Product Card</h1>
+    <div id="furniture-list">
+ 
+       
+    </div>
+   
+    <script>
+        const furnitures=[
+            {
+                id:1,
+                name:"Living Room Sofa",
+                image:"images/sofa.jfif",
+                price:450,
+                desc:"Shop Modern Living Room Furniture Online in India includes everything from plush sofas.",
+                btn:"Add to Cart",
+            },
+ 
+ 
+            {
+                id:2,
+                name:"King size Bed",
+                image:"images/bed.jfif",
+                price:350,
+                desc:"From cots and cabinets for your bedroom,Explore our wide range of furniture.",
+                btn:"Add to Cart",
+            },
+ 
+ 
+            {
+                id:3,
+                name:"Wooden Wardrope",
+                image:"images/wardrope.jfif",
+                price:150,
+                desc:"Whether you're outfitting your home or office, our extensive collection of furniture in Chennai",
+                btn:"Add to Cart",
+                
+            },
+ 
+ 
+            {
+                id:4,
+                name:"Dressing Table",
+                image:"images/table.jfif",
+                price:50,
+                desc:"Shop living room furniture online and get up to 50% off at Durian. Explore our wide range of furniture.",
+                btn:"Add to Cart",
+            
+            },
+ 
+        ];
+ 
+document.addEventListener("DOMContentLoaded",()=>{
+ 
+ 
+const furniturecontainer=document.getElementById("furniture-list");
+ 
+furnitures.forEach(furniture=>{
+ 
+ 
+    const furniturecard=document.createElement("div");
+    furniturecard.classList.add("furniture-card-details");
+ 
+    furniturecard.innerHTML=`
+   
+    <img src=${furniture.image}>
+    <h2>${furniture.name}</h2>
+    <h3>${furniture.price}</h3>
+    <p>${furniture.desc}</p>
+    <button>${furniture.btn}</button>
+    `;
+    furniturecontainer.appendChild(furniturecard);
+});
+ 
+ 
+});
+ 
+ 
+ 
+    </script>
+</body>
+</html>
